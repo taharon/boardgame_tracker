@@ -13,5 +13,23 @@
     </head>
     <body>
       <h1>boardgame_tracker</h1>
+      <h2 style='text-align: center' id='message'>Welcome! Please log in or sign up.</h2>
+      <form id="sign-up">
+        <input type='text' name='credentials[email]' placeholder='Email'></input>
+        <input type='password' name='credentials[password]' placeholder='Password'></input>
+        <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'></input>
+        <input type='submit' value="Sign Up"></input>
+      </form>
+      <form id="sign-in">
+        <input type='text' name='credentials[email]' placeholder='Email'></input>
+        <input type='password' name='credentials[password]' placeholder='Password'></input>
+        <input type='submit' value="Sign In"></input>
+      </form>
+      <button type='button' id='sign-out'>Sign Out</button>
+      <form id="change-pw">
+        <input type='password' name='passwords[old]' placeholder='Old Password'></input>
+        <input type='password' name='passwords[new]' placeholder='New Password'></input>
+        <input type='submit' value="Change Password"></input>
+      </form>
     </body>
 </html>
