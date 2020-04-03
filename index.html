@@ -1,41 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Board Game Tracker</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body>
-      <div class="navbar navbar-expand">
-        <div class="navbar-nav">
-          <div class="container">
-            <div class="row">
-              <div class="col-4" id="first">
-                <input type='button' id='sign-up' class='border border-dark rounded-pill' value='Sign Up'>
-              </div>
-              <div class="col-4" id="second"></div>
-              <div class="col-4" id="third">
-                <input type='button' id='sign-in' class='border border-dark rounded-pill' value='Sign In'>
-              </div>
+  <head>
+    <title>Board Game Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <div class="navbar navbar-expand">
+      <div class="navbar-nav" style='height: 60px;'>
+        <div class="container justify-content-around">
+            <div class="first" style='height: 60px;'>
+              <input type='button' id='sign-up' class='border border-dark rounded-pill h-90 d-block' style='width: 200px;' value='Sign Up'>
             </div>
-          </div>
+            <div class='second' style='width: 200px;'></div>
+            <div class="third" style='height: 60px;'>
+              <input type='button' id='sign-in' class='border border-dark rounded-pill h-90'  style='width: 200px;' value='Sign In'>
+            </div>
         </div>
       </div>
-      </div>
-      <h1>boardgame_tracker</h1>
-      <h2 style='text-align: center' id='message'>Welcome! Please log in or sign up.</h2>
-      <div class="content"></div>
-      <button type='button' id='sign-out'>Sign Out</button>
-      <form id="change-pw">
-        <input type='password' name='passwords[old]' placeholder='Old Password'></input>
-        <input type='password' name='passwords[new]' placeholder='New Password'></input>
-        <input type='submit' value="Change Password"></input>
-      </form>
-    </body>
+    </div>
+    <div class="content"></div>
+  </body>
 </html>

@@ -34,7 +34,6 @@
    const onGoToSignIn = function (event) {
       event.preventDefault()
       ui.displaySignIn()
-
    }
 
    const onSignIn = (event) => {
@@ -49,6 +48,10 @@
 //change password function
    const onGoToChangePw = function (event) {
       event.preventDefault()
+      ui.displayChangePw()
+   }
+
+   const onChangePw = (event) => {
       const passObj = getFormFields(event.target)
       api.changePw(passObj)
          .then(ui.onChangePwSuccess)
@@ -58,7 +61,7 @@
    }
 
 //sign out function
-   const onGoToSignOut = function (event) {
+   const onSignOut = function (event) {
       event.preventDefault()
       api.signOut()
          .then(ui.onSignOutSuccess)
@@ -70,8 +73,9 @@
 module.exports = {
    onGoToSignUp,
    onGoToSignIn,
-   onGoToSignOut,
+   onSignOut,
    onGoToChangePw,
    onSignUp,
-   onSignIn
+   onSignIn,
+   onChangePw
 }

@@ -14,13 +14,16 @@ const onSignUpFail = error => {
   $('#message').addClass('failure') 
 }
 const onSignInSuccess = (data) => {
-  $('#message').text('Signed in successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+   $('#message').text('Signed in successfully')
+   $('#message').removeClass()
+   $('#message').addClass('success')
 //after a login, save the user data so the token can be retrieved
   store.user = data.user
-  $('#first').empty()
-  $('#third').empty()
+   $('.first').empty()
+   $('.third').empty()
+   const navbar = require('../templates/navbar.handlebars')
+   $('.third').html(navbar)
+   $('.content').empty()
  // $('#sign-out').removeAttr('hidden')
  // $('#sign-up').attr('hidden','hidden')
  // $('#sign-in').attr('hidden','hidden')
@@ -51,6 +54,13 @@ const onSignOutSuccess = () => {
   $('#message').text('Signed out successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.first').empty()
+  $('.third').empty()
+  const signUp = require('../templates/sign_up.handlebars')
+  $('.first').html(signUp)
+  const signIn = require('../templates/sign_in.handlebars')
+  $('.third').html(signIn)
+  $('.content').empty()
 //  $('#change-pw').attr('hidden','hidden')
 //  $('#sign-out').attr('hidden','hidden')
 //  $('#sign-up').removeAttr('hidden')
@@ -91,14 +101,20 @@ const onChangePwFail = error => {
 
 const displaySignUp = () => {
    $('.content').empty()
-   const showSignUp = require('../templates/sign_up.handlebars')
+   const showSignUp = require('../templates/sign_up_form.handlebars')
    $('.content').html(showSignUp)
 }
 
 const displaySignIn = () => {
    $('.content').empty()
-   const showSignIn = require('../templates/sign_in.handlebars')
+   const showSignIn = require('../templates/sign_in_form.handlebars')
    $('.content').html(showSignIn)
+}
+
+const displayChangePw = () => {
+   $('.content').empty()
+   const showChangePw = require('../templates/change-pw.handlebars')
+   $('.content').html(showChangePw)
 }
 
 module.exports = {
@@ -111,5 +127,6 @@ module.exports = {
    onChangePwFail,
    onChangePwSuccess,
    displaySignUp,
-   displaySignIn
+   displaySignIn,
+   displayChangePw
 }
