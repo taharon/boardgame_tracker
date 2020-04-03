@@ -4,7 +4,12 @@
    const getFormFields = require('/Users/taharon/sei/projects/tic-tac-toe-client/lib/get-form-fields.js')
 
 //log in function
-   const onSignUp = function (event) {
+   const onGoToSignUp = function (event) {
+      event.preventDefault()
+      ui.displaySignUp()
+   }
+
+   const onSignUp = (event) => {
       event.preventDefault()
       const data = getFormFields(event.target)
 //checking to see that the user password = password_confirmation
@@ -16,6 +21,7 @@
          $('html form').trigger('reset')
       }
       else{
+         console.log(data)
          api.signUp(data)
             .then(ui.onSignUpSuccess)
             .catch(ui.onSignUpFail)
@@ -25,7 +31,13 @@
    }
    
 //sign in function
-   const onSignIn = function (event) {
+   const onGoToSignIn = function (event) {
+      event.preventDefault()
+      ui.displaySignIn()
+
+   }
+
+   const onSignIn = (event) => {
       event.preventDefault()
       api.signIn(getFormFields(event.target))
          .then(ui.onSignInSuccess)
@@ -35,10 +47,9 @@
    }
    
 //change password function
-   const onChangePw = function (event) {
+   const onGoToChangePw = function (event) {
       event.preventDefault()
       const passObj = getFormFields(event.target)
-      console.log(passObj)
       api.changePw(passObj)
          .then(ui.onChangePwSuccess)
          .catch(ui.onChangePwFail)
@@ -47,7 +58,7 @@
    }
 
 //sign out function
-   const onSignOut = function (event) {
+   const onGoToSignOut = function (event) {
       event.preventDefault()
       api.signOut()
          .then(ui.onSignOutSuccess)
@@ -57,8 +68,10 @@
    }
 
 module.exports = {
+   onGoToSignUp,
+   onGoToSignIn,
+   onGoToSignOut,
+   onGoToChangePw,
    onSignUp,
-   onSignIn,
-   onSignOut,
-   onChangePw
+   onSignIn
 }

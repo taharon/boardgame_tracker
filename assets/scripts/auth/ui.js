@@ -19,6 +19,8 @@ const onSignInSuccess = (data) => {
   $('#message').addClass('success')
 //after a login, save the user data so the token can be retrieved
   store.user = data.user
+  $('#first').empty()
+  $('#third').empty()
  // $('#sign-out').removeAttr('hidden')
  // $('#sign-up').attr('hidden','hidden')
  // $('#sign-in').attr('hidden','hidden')
@@ -87,6 +89,18 @@ const onChangePwFail = error => {
   $('#message').addClass('failure')
 }
 
+const displaySignUp = () => {
+   $('.content').empty()
+   const showSignUp = require('../templates/sign_up.handlebars')
+   $('.content').html(showSignUp)
+}
+
+const displaySignIn = () => {
+   $('.content').empty()
+   const showSignIn = require('../templates/sign_in.handlebars')
+   $('.content').html(showSignIn)
+}
+
 module.exports = {
    onSignUpFail,
    onSignUpSuccess,
@@ -95,5 +109,7 @@ module.exports = {
    onSignOutFail,
    onSignOutSuccess,
    onChangePwFail,
-   onChangePwSuccess
+   onChangePwSuccess,
+   displaySignUp,
+   displaySignIn
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Board Game Tracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,19 +12,25 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+      <div class="navbar navbar-expand">
+        <div class="navbar-nav">
+          <div class="container">
+            <div class="row">
+              <div class="col-4" id="first">
+                <input type='button' id='sign-up' class='border border-dark rounded-pill' value='Sign Up'>
+              </div>
+              <div class="col-4" id="second"></div>
+              <div class="col-4" id="third">
+                <input type='button' id='sign-in' class='border border-dark rounded-pill' value='Sign In'>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
       <h1>boardgame_tracker</h1>
       <h2 style='text-align: center' id='message'>Welcome! Please log in or sign up.</h2>
-      <form id="sign-up">
-        <input type='text' name='credentials[email]' placeholder='Email'></input>
-        <input type='password' name='credentials[password]' placeholder='Password'></input>
-        <input type='password' name='credentials[password_confirmation]' placeholder='Confirm Password'></input>
-        <input type='submit' value="Sign Up"></input>
-      </form>
-      <form id="sign-in">
-        <input type='text' name='credentials[email]' placeholder='Email'></input>
-        <input type='password' name='credentials[password]' placeholder='Password'></input>
-        <input type='submit' value="Sign In"></input>
-      </form>
+      <div class="content"></div>
       <button type='button' id='sign-out'>Sign Out</button>
       <form id="change-pw">
         <input type='password' name='passwords[old]' placeholder='Old Password'></input>
