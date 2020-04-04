@@ -22,4 +22,5 @@ $(() => {
   //Actual Library
   $('.container').on('click', '#add-game', gameCreate.onGoToAddGame)
   $('.content').on('submit', '#add-game-form', gameCreate.onAddGame)
+  $('.container').on('click', '#show-games', gameCreate.onGoToShowGames)
 })

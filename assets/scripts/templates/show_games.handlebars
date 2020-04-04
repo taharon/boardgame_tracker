@@ -1,0 +1,11 @@
+<div class="container d-flex h-100 w-100 flex-wrap justify-content-around">
+   {{#each games as |game|}}
+   <div class="card border-dark mb-4 w-27 text-center">
+      <div class="card-header"></div>
+      <div class="card-body">
+         <h7 class="card-title">{{game.name}}</h7>
+         <p class="card-text">Score {{game.score}}</p>
+      </div>
+   </div>
+   {{/each}}
+</div>
