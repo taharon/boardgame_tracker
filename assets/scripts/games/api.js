@@ -23,7 +23,41 @@ const getGames = () => {
    })
 }
 
+const getAGame = (idNum) => {
+   return $.ajax({
+      url: url.apiUrl + `games/${idNum}`,
+      method: 'GET',
+      headers:{
+         "Authorization": `Token token=${store.user.token}`
+      }
+   })
+}
+
+const updateGame = (data, idNum) => {
+   return $.ajax({
+      url: url.apiUrl + `games/${idNum}`,
+      method: 'PATCH',
+      headers:{
+         "Authorization": `Token token=${store.user.token}`
+      },
+      data: data
+   })
+}
+
+const deleteGame = (idNum) => {
+   return $.ajax({
+      url: url.apiUrl + `games/${idNum}`,
+      method: 'DELETE',
+      headers:{
+         "Authorization": `Token token=${store.user.token}`
+      }
+   })
+}
+
 module.exports = {
    addGame,
-   getGames
+   getGames,
+   getAGame,
+   updateGame,
+   deleteGame
 }

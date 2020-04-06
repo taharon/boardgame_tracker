@@ -1,0 +1,14 @@
+<form id='show-game-form' data-id={{game.id}}>
+   <div class="container justify-content-around d-flex mb-3">
+      <input type='text' style='height: 60px;' class='w-25 text-center rounded' name='game[name]' disabled='true' placeholder='Game Name' value='{{game.name}}'>
+      <input type='text' style='height: 60px;' class='w-25 text-center rounded' name='game[score]' disabled='true' placeholder='Score out of 10' value='{{game.score}}'>
+   </div>
+   <div class='container d-flex justify-content-center flex-wrap'>
+      <textarea type='text' class='w-90 mb-3 rounded' name='game[review]' placeholder='Review' disabled='true' style='height: 300px;'>{{game.review}}</textarea>
+   </div>
+   <div class="container flex-wrap justify-content-around d-flex">
+      <input style='height: 60px;' type='submit' class='w-27 rounded-pill' value="Update"></input>
+      <button style='height: 60px;' type='button' id='delete-game' data-id={{game.id}} class='w-27 rounded-pill'>Delete</button>
+      <button style='height: 60px;' type='button' id='cancel-show-game' class='w-27 rounded-pill'>Return</button>
+   </div>
+</form>

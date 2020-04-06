@@ -4,7 +4,8 @@
       <div class="card-header"></div>
       <div class="card-body">
          <h7 class="card-title">{{game.name}}</h7>
-         <p class="card-text">Score {{game.score}}</p>
+         <p class="card-text">Score: {{game.score}}</p>
+         <button data-id="{{game.id}}" class='go-to-show'>Show Full Game</button>
       </div>
    </div>
    {{/each}}
