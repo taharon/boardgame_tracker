@@ -1,7 +1,7 @@
 'use strict'
 const api = require('./api.js')
 const ui = require('./ui.js')
-const getFormFields = require('/Users/taharon/sei/projects/tic-tac-toe-client/lib/get-form-fields.js')
+const getFormFields = require('../../../lib/get-form-fields.js')
 
 const onGoToAddGame = (event) => {
    event.preventDefault()
