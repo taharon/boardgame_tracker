@@ -33,7 +33,7 @@ const goToUpdateGame = (event) =>{
 
 const onCancelUpdateGame = (event) =>{
    event.preventDefault()
-   onShowGame(event)
+   onShowAGame(event)
 }
 
 const onCancelShowGame = (event) =>{

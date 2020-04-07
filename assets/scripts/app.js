@@ -27,5 +27,6 @@ $(() => {
   $('.content').on('click', '#cancel-show-game', gameCreate.onCancelShowGame)
   $('.content').on('submit', '#show-game-form', gameCreate.goToUpdateGame)
   $('.content').on('submit', '#update-game-form', gameCreate.onUpdateGame)
+  $('.content').on('click', '#cancel-update-game', gameCreate.onCancelUpdateGame)
   $('.content').on('click', '#delete-game', gameCreate.onDeleteGame)
 })
