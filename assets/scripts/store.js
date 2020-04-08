@@ -1,7 +1,8 @@
 'use strict'
 
 const store = {
-   userList: []
+   userList: [],
+   gameList: []
 }
 
 module.exports = store

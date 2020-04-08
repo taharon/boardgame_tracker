@@ -28,8 +28,16 @@ const usernameError = () => {
    $('#message').text('Invalid Username(s)!')
 }
 
+const displayPlayed = (gamesPlayed) => {
+   $('#message').text('')
+   const showPlayedTemplate = require('../templates/show_all_games_played.handlebars')
+   const showPlayed = showPlayedTemplate({ games: gamesPlayed})
+   $('.content').html(showPlayed)
+}
+
 module.exports = {
    displayAddPlayed,
    addPlayersScores,
-   usernameError
+   usernameError,
+   displayPlayed
 }

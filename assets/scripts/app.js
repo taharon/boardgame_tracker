@@ -18,8 +18,7 @@ $(() => {
   $('.container').on('click', '#sign-out', userCreate.onSignOut)
   $('.content').on('submit', '#sign-up-form', userCreate.onSignUp)
   $('.content').on('submit', '#sign-in-form', userCreate.onSignIn)
-  $('.content').on('submit', '#change-pw-form', userCreate.onChangePw)
-
+  $('.content').on('submit', '#change-pw-form', userCreate.onChangePw)   
   //Actual Library
   $('.container').on('click', '#add-game', gameCreate.onGoToAddGame)
   $('.content').on('submit', '#add-game-form', gameCreate.onAddGame)
@@ -29,12 +28,11 @@ $(() => {
   $('.content').on('submit', '#show-game-form', gameCreate.goToUpdateGame)
   $('.content').on('submit', '#update-game-form', gameCreate.onUpdateGame)
   $('.content').on('click', '#cancel-update-game', gameCreate.onCancelUpdateGame)
-  $('.content').on('click', '#delete-game', gameCreate.onDeleteGame)
-
+  $('.content').on('click', '#delete-game', gameCreate.onDeleteGame)   
   //Played games (and game instances, because they're tied together)
   $('.container').on('click', '#add-played-game', gamePlayed.onGoToAddPlayed)
   $('.content').on('focusout', '#numPlayers', gamePlayed.updatePlayers)
-  $('.content').on('keyup', '.person-box', gamePlayed.validatePlayer)
+  $('.content').on('keyup focusout', '.person-box', gamePlayed.validatePlayer)
   $('.content').on('submit', '#add-played-form', gamePlayed.onSubmitPlayed)
-  
+  $('.container').on('click', '#show-played-game', gamePlayed.onShowPlayed)
 })

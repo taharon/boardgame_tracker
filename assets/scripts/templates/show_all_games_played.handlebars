@@ -1,0 +1,11 @@
+<div class="container d-flex h-100 w-100 flex-wrap justify-content-around">
+   {{#each games as |game|}}
+   <div class="card border-dark mb-4 w-75 text-center">
+      <div class="card-header">{{game.name}}</div>
+      <div class="card-body">
+         <h7 class="card-title">Date: {{game.date}}</h7>
+         <div class="container d-flex h-100 w-100 flex-wrap justify-content-around">{{{playerNameScores game}}}</div>
+      </div>
+   </div>
+   {{/each}}
+</div>

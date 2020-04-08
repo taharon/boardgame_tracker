@@ -35,8 +35,19 @@ const getUserList = () => {
    })
 }
 
+const getGameList = () => {
+   return $.ajax({
+      url: url.apiUrl + 'played_games',
+      method: 'GET',
+      headers:{
+         "Authorization": `Token token=${store.user.token}`
+      }
+   })
+}
+
 module.exports = {
    createPlayedGame,
    createGameInstance,
-   getUserList
+   getUserList,
+   getGameList
 }
