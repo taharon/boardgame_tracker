@@ -66,6 +66,7 @@ const onDeleteFail = () => {
    $('#message').text('Failed to delete game')
 }
 
+
 module.exports = {
    displayAddGame,
    displayGames,

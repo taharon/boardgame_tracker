@@ -1,7 +1,9 @@
 'use strict'
 //removeAttr('hidden') and attr('hidden','hidden') are used in this page to show or hide html elements depending on a user's login status
 const store = require('../store.js')
-    
+const playedApi = require('../played_games/api.js')
+
+
 const onSignUpSuccess = () => {
   $('#message').text('Signed up successfully')
   $('#message').removeClass()
@@ -17,37 +19,24 @@ const onSignInSuccess = (data) => {
    $('#message').text('Signed in successfully')
    $('#message').removeClass()
    $('#message').addClass('success')
-//after a login, save the user data so the token can be retrieved
   store.user = data.user
    $('.first').empty()
    $('.third').empty()
    const navbar = require('../templates/navbar.handlebars')
    $('.third').html(navbar)
+   const userString = `<div style='font-size: 40px'> ${store.userName}<\div>` 
+   $('.first').html(userString)
    $('.content').empty()
- // $('#sign-out').removeAttr('hidden')
- // $('#sign-up').attr('hidden','hidden')
- // $('#sign-in').attr('hidden','hidden')
- // const gamePlay = require('../game/events.js')
- // $('#demo-board').on('click', gamePlay.newGame)
- // const gameApi = require('../game/api.js')
- // const gameUi = require('../game/ui.js')
- // $('#total-games').removeAttr('hidden')
- // gameApi.getIndex()
- //    .then(gameUi.onGetIndexSucceed)
- //    .catch(gameUi.onGetIndexFail)
- // $('#new-game').removeAttr('hidden')
- // $('.hide-user').removeAttr('hidden')
- // $('#pass-logout').removeAttr('hidden')
- // $('.username').text(store.user.email)
- // $('#super-s').removeAttr('hidden')
+   playedApi.getGameList()
+    .then((data) => store.gameList = data.played_games)
+
 }
 
 const onSignInFail = error => {
   $('#message').text('Failed to sign in')
   $('#message').removeClass()
   $('#message').addClass('failure')
-//  $('#change-pw').attr('hidden','hidden')
-//  $('#sign-out').attr('hidden','hidden')
+
 }
 
 const onSignOutSuccess = () => {
@@ -61,17 +50,6 @@ const onSignOutSuccess = () => {
   const signIn = require('../templates/sign_in.handlebars')
   $('.third').html(signIn)
   $('.content').empty()
-//  $('#change-pw').attr('hidden','hidden')
-//  $('#sign-out').attr('hidden','hidden')
-//  $('#sign-up').removeAttr('hidden')
-//  $('#sign-in').removeAttr('hidden')
-//  $('#total-games').attr('hidden','hidden')
-//  $('#new-game').attr('hidden','hidden')
-//  $('#game-board').attr('hidden','hidden')
-//  $('#demo-board').removeAttr('hidden')
-//  $('.hide-user').attr('hidden', 'hidden')
-//  $('#pass-logout').attr('hidden', 'hidden')
-//  $('#super-s').attr('hidden','hidden')
 }
 
 const onSignOutFail = () => {
@@ -85,12 +63,6 @@ const onChangePwSuccess = (data) => {
   $('#message').text('Password changed successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-//  $('#change-pw').attr('hidden','hidden')
-//  $('#sign-out').attr('hidden','hidden')
-//  $('#sign-up').removeAttr('hidden')
-//  $('#sign-in').removeAttr('hidden')
-//  $('.hide-user').attr('hidden', 'hidden')
-//  api.signOut()
 }
 
 const onChangePwFail = error => {

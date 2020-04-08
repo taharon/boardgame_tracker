@@ -1,7 +1,8 @@
 'use strict'
    const api = require('./api.js')
    const ui = require('./ui.js')
-   const getFormFields = require('/Users/taharon/sei/projects/tic-tac-toe-client/lib/get-form-fields.js')
+   const store = require('../store.js')
+   const getFormFields = require('../../../lib/get-form-fields.js')
 
 //log in function
    const onGoToSignUp = function (event) {
@@ -21,7 +22,6 @@
          $('html form').trigger('reset')
       }
       else{
-         console.log(data)
          api.signUp(data)
             .then(ui.onSignUpSuccess)
             .catch(ui.onSignUpFail)
@@ -38,7 +38,9 @@
 
    const onSignIn = (event) => {
       event.preventDefault()
-      api.signIn(getFormFields(event.target))
+      const temp = getFormFields(event.target)
+      store.userName = temp.credentials.email
+      api.signIn(temp)
          .then(ui.onSignInSuccess)
          .catch(ui.onSignInFail)
 //resetting the forms on any button click
