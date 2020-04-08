@@ -47,7 +47,7 @@ const onSubmitPlayed = (event) => {
                   .then((data) => store.gameList = data.played_games)
             })
       })
-      
+   $('html form').trigger('reset')
 }
 
 const validatePlayer = (event) => {
