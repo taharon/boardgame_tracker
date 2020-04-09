@@ -29,13 +29,13 @@ The initial ERD included only a library for storing board games. With the additi
 ![Initial ERD for board game tracker.](https://i.imgur.com/CdaQuBy.jpg)
 
 ## User Stories
-I created a basic set of user stories for the bare minimum a user should be able to do in order to track board games they owned, and to add a played game:  
-As an unregistered user, I'd like to register 
-As a registered user, I'd like to log in 
-As a logged in user, I'd like to log out 
-As a logged in user, I'd like to change password 
-As a logged in user, I'd like to add to my library 
-As a logged in user, I'd like to add a played game 
+- I created a basic set of user stories for the bare minimum a user should be able to do in order to track board games they owned, and to add a played game:  
+- As an unregistered user, I'd like to register  
+- As a registered user, I'd like to log in  
+- As a logged in user, I'd like to log out  
+- As a logged in user, I'd like to change password  
+- As a logged in user, I'd like to add to my library  
+- As a logged in user, I'd like to add a played game  
 
 ## Development
 In order to begin the project, I broke down the files I would need to create, and their respective goals.  
@@ -49,9 +49,9 @@ I also want to validate emails as a user types them in, since I do not expect us
 I need to create a series of custom routes which would return joins of my played games and game instance tables. These currently do not work, and these joins are created on the front end, however this require pulling the entire played games table. This has also led to played game creation requiring a loop over the number of players and multiple api calls, instead of a single call with an array of objects.
 
 ## Up Next
-Change CSS to make it look nicer
-Add friends list for users
-Finish custom routes for played games update, delete
-Allow users to show all games played or all games played with a certain user
-Allow users to add a played game with an unregistered user (user XOR unregistered user)
-Only allow 1 copy of board game in library
+- Change CSS to make it look nicer  
+- Add friends list for users  
+- Finish custom routes for played games update, delete  
+- Allow users to show all games played or all games played with a certain user  
+- Allow users to add a played game with an unregistered user (user XOR unregistered user)  
+- Only allow 1 copy of board game in library  
