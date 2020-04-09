@@ -14,6 +14,17 @@ const createPlayedGame = (playedGameData) => {
    })
 }
 
+//const testPlayedArray = (playedGameData) => {
+//   return $.ajax({
+//      url: url.apiUrl + 'played_games_array_create',
+//      method: 'POST',
+//      headers:{
+//         "Authorization": `Token token=${store.user.token}`
+//      },
+//      data: {played_games: playedGameData}
+//   })
+//}
+
 const createGameInstance = (instanceGameData) => {
    return $.ajax({
       url: url.apiUrl + 'game_instances',
@@ -60,5 +71,7 @@ module.exports = {
    createGameInstance,
    getUserList,
    getGameList,
+//   testPlayedArray,
    getGameInstances
+
 }
