@@ -37,15 +37,11 @@ const onSubmitPlayed = (event) => {
             allPlayers[i].played_game.game_instance_id = idNum
             allPlayers[i].played_game.score = gameData.score[i]
             allPlayers[i].played_game.user_id = store.userList.find(users => users.email === gameData.player[i]).id
+            console.log(allPlayers[i])
          }
-         for (let i = 0; i < allPlayers.length-1; i++){
+         for (let i = 0; i < allPlayers.length; i++){
             api.createPlayedGame(allPlayers[i])
          }
-         api.createPlayedGame(allPlayers[allPlayers.length-1])
-            .then(() => {
-               api.getGameList()
-                  .then((data) => store.gameList = data.played_games)
-            })
       })
    $('html form').trigger('reset')
 }
@@ -62,19 +58,20 @@ const validatePlayer = (event) => {
 
 const onShowPlayed = (event) => {
    event.preventDefault()
-   const myGames = store.gameList.filter(games => games.user.email === store.userName).map(game => game.game_instance.id)
-   const myGamesPlayed = store.gameList.filter(games => myGames.includes(games.game_instance.id))
-   const gamesPlayed = []
-   for (let i=0; i < myGames.length; i++){
-      gamesPlayed.push({})
-      const players = myGamesPlayed.filter(people => people.game_instance.id === myGames[i])
-      gamesPlayed[i].name = players[0].game_instance.name
-      gamesPlayed[i].date = players[0].game_instance.when
-      for (let j = 0; j < players.length; j++){
-         gamesPlayed[i][`player_${j+1}`] = {name: players[j].user.email, score: players[j].score}
+   api.getGameInstances().then((data) => {
+      const myGames = data.game_instances
+      const gamesPlayed = []
+      for (let i=0; i < myGames.length; i++){
+         const currentGame = myGames[i] 
+         gamesPlayed.push({})
+         gamesPlayed[i].name = currentGame.name
+         gamesPlayed[i].date = currentGame.when
+         for (let j = 0; j < currentGame.users.length; j++){
+            gamesPlayed[i][`player_${j+1}`] = {name: currentGame.users[j].email, score: currentGame.played_games[j].score}
+         }
       }
-   }
-   ui.displayPlayed(gamesPlayed)
+      ui.displayPlayed(gamesPlayed)
+   })
 }
 
 module.exports = {
