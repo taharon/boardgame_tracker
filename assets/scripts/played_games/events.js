@@ -37,11 +37,13 @@ const onSubmitPlayed = (event) => {
             allPlayers[i].played_game.game_instance_id = idNum
             allPlayers[i].played_game.score = gameData.score[i]
             allPlayers[i].played_game.user_id = store.userList.find(users => users.email === gameData.player[i]).id
-            console.log(allPlayers[i])
          }
          for (let i = 0; i < allPlayers.length; i++){
             api.createPlayedGame(allPlayers[i])
          }
+// this, coupled with the test played array method in the API, lets me create multiple played_games at once from one
+// game instance using an array
+//         api.testPlayedArray(allPlayers)
       })
    $('html form').trigger('reset')
 }
@@ -64,6 +66,7 @@ const onShowPlayed = (event) => {
       for (let i=0; i < myGames.length; i++){
          const currentGame = myGames[i] 
          gamesPlayed.push({})
+         gamesPlayed[i].id = currentGame.id
          gamesPlayed[i].name = currentGame.name
          gamesPlayed[i].date = currentGame.when
          for (let j = 0; j < currentGame.users.length; j++){
