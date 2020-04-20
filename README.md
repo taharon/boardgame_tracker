@@ -1,6 +1,8 @@
 # Board Game Tracker
 The repo for the API for this app is available at:  
-[Board game tracker API repo.](https://github.com/taharon/Project_2_API)
+[Boardgame Tracker App](https://taharon.github.io/boardgame_tracker/)
+[Boardgame tracker API](https://project-2-api-248.herokuapp.com/)
+[Board game tracker API repo](https://github.com/taharon/Project_2_API)
 
 ## What is this for
 
