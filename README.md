@@ -2,6 +2,10 @@
 The repo for the API for this app is available at:  
 [Board game tracker API repo.](https://github.com/taharon/Project_2_API)
 
+## What is this for
+
+This app is to be used to track board games. It allows you to record which board games you own, a score each for them, and a review. The app currently also allows players to record games played with a date, players, and scores for each.  
+
 ## Tech
 JavaScript  
 jQuery  
