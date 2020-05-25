@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Board Game Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Boardgame Tracker" />
+    <meta property="og:url" content="https://taharon.github.io/boardgame_tracker/" />
+    <meta property="og:image" content="https://i.imgur.com/12g7l35.png" />
+    <!-- Do not add `link` tags-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <!-- Do not add `script` tags-->
+    <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+  </head>
+  <body>
+    <div class="navbar navbar-expand">
+      <div class="navbar-nav" style='height: 100px;'>
+        <div class="container justify-content-around">
+            <div class="first" style='height: 60px;'>
+              <input type='button' id='sign-up' class='border border-dark rounded-pill h-90 d-block' style='width: 200px;' value='Sign Up'>
+            </div>
+            <div class='second' style='width: 200px;'></div>
+            <div class="third" style='height: 60px;'>
+              <input type='button' id='sign-in' class='border border-dark rounded-pill h-90'  style='width: 200px;' value='Sign In'>
+            </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <h2 style='text-align: center' id='message'></h2>
+      <div class="content mt-3"></div>
+    </main>
+  </body>
+</html>
